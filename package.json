@@ -1,5 +1,5 @@
 {
-  "name": "tailwindcli",
+  "name": "@babsfullstack97/racine",
   "version": "1.0.0",
   "description": "A CLI for generating starter files with TailwindCSS pre-installed",
   "main": "./bin/index.js",
@@ -20,5 +20,13 @@
     "chalk": "^4.1.2",
     "inquirer": "^8.2.2",
     "shelljs": "^0.8.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babsfullstack97/racine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/babsfullstack97/racine.git/issues"
+  },
+  "homepage": "https://github.com/babsfullstack97/racine.git/issues#readme"
 }
