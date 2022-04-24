@@ -1,0 +1,22 @@
+{
+  "name": "tailwindcli",
+  "version": "1.0.0",
+  "description": "A CLI for generating starter files with TailwindCSS pre-installed",
+  "main": "./bin/index.js",
+  "bin": {
+    "tcli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "tailwindcss",
+    "nodejs"
+  ],
+  "author": "Babsfullstack97",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
