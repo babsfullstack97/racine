@@ -2,6 +2,7 @@
 
 const inquirer = require('inquirer');
 const shell = require('shelljs');
+const chalk = require('chalk');
 
 const path = process.cwd();
 
@@ -13,23 +14,31 @@ inquirer.prompt(questions).then((answers) => {
     inquirer.prompt(questionsTs).then((answersTs) => {
       if (answersTs.typescript === 'Yes') {
         shell.exec(`mkdir ${answers.projectName}`);
-        console.log('📁 Created a folder for the project');
+        console.log(chalk.green('📁 Created a folder for the project'));
         shell.exec(`git clone ${links.get('React-TS')} ${answers.projectName}`);
-        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
+        console.log(
+          chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+        );
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
-          '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          chalk.green(
+            '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          )
         );
       } else {
         shell.exec(`mkdir ${answers.projectName}`);
-        console.log('📁 Created a folder for the project');
+        console.log(chalk.green('📁 Created a folder for the project'));
         shell.exec(`git clone ${links.get('React')} ${answers.projectName}`);
-        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
+        console.log(
+          chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+        );
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
-          '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          chalk.green(
+            '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          )
         );
       }
     });
@@ -37,47 +46,63 @@ inquirer.prompt(questions).then((answers) => {
     inquirer.prompt(questionsTs).then((answersTs) => {
       if (answersTs.typescript === 'Yes') {
         shell.exec(`mkdir ${answers.projectName}`);
-        console.log('📁 Created a folder for the project');
+        console.log(chalk.green('📁 Created a folder for the project'));
         shell.exec(
           `git clone ${links.get('NextJS-TS')} ${answers.projectName}`
         );
-        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
+        console.log(
+          chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+        );
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
-          '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          chalk.green(
+            '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          )
         );
       } else {
         shell.exec(`mkdir ${answers.projectName}`);
-        console.log('📁 Created a folder for the project');
+        console.log(chalk.green('📁 Created a folder for the project'));
         shell.exec(`git clone ${links.get('NextJS')} ${answers.projectName}`);
-        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
+        console.log(
+          chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+        );
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
-          '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          chalk.green(
+            '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          )
         );
       }
     });
   } else if (answers.framework === 'Svelte') {
     shell.exec(`mkdir ${answers.projectName}`);
-    console.log('📁 Created a folder for the project');
+    console.log(chalk.green('📁 Created a folder for the project'));
     shell.exec(`git clone ${links.get('Svelte')} ${answers.projectName}`);
-    console.log(`🖨️  Cloned started files into ${answers.projectName}`);
+    console.log(
+      chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+    );
     shell.cd(`${path}/${answers.projectName}`);
     shell.exec(`npm i`);
     console.log(
-      '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+      chalk.green(
+        '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+      )
     );
   } else {
     shell.exec(`mkdir ${answers.projectName}`);
-    console.log('📁 Created a folder for the project');
+    console.log(chalk.green('📁 Created a folder for the project'));
     shell.exec(`git clone ${links.get('Vue')} ${answers.projectName}`);
-    console.log(`🖨️  Cloned started files into ${answers.projectName}`);
+    console.log(
+      chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+    );
     shell.cd(`${path}/${answers.projectName}`);
     shell.exec(`npm i`);
     console.log(
-      '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+      chalk.green(
+        '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+      )
     );
   }
 });
