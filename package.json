@@ -17,6 +17,7 @@
   "author": "Babsfullstack97",
   "license": "MIT",
   "dependencies": {
-    "inquirer": "^8.2.2"
+    "inquirer": "^8.2.2",
+    "shelljs": "^0.8.5"
   }
 }
