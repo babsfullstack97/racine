@@ -2,13 +2,8 @@
 
 const inquirer = require('inquirer');
 
-inquirer
-  .prompt([
-    {
-      type: 'list',
-      name: 'framework',
-      message: 'Choose the JS framework which you are using:',
-      choices: ['React', 'NextJS', 'Angular', 'Svelte', 'VueJS'],
-    },
-  ])
-  .then((answers) => {});
+const { questions, questionsTs } = require('./utils/questions.js');
+
+inquirer.prompt(questions).then((answers) => {
+  // Use user feedback for... whatever!!
+});
