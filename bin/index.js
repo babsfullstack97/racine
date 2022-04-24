@@ -6,15 +6,16 @@ const shell = require('shelljs');
 const path = process.cwd();
 
 const { questions, questionsTs } = require('./utils/questions.js');
+const links = require('./utils/links.js');
 
 inquirer.prompt(questions).then((answers) => {
   if (answers.framework === 'React') {
     inquirer.prompt(questionsTs).then((answersTs) => {
       if (answersTs.typescript === 'Yes') {
         shell.exec(`mkdir ${answers.projectName}`);
-        shell.exec(
-          `git clone https://github.com/GKaszewski/react-tailwind-typescript-template ${answers.projectName}`
-        );
+        console.log('📁 Created a folder for the project');
+        shell.exec(`git clone ${links.get('React-TS')} ${answers.projectName}`);
+        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
@@ -22,10 +23,9 @@ inquirer.prompt(questions).then((answers) => {
         );
       } else {
         shell.exec(`mkdir ${answers.projectName}`);
-        shell.exec(
-          `git clone https://github.com/YashKumarVerma/react-tailwind-template ${answers.projectName}`
-        );
-        console.log('🛠️  Successfully build the required files');
+        console.log('📁 Created a folder for the project');
+        shell.exec(`git clone ${links.get('React')} ${answers.projectName}`);
+        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
@@ -37,9 +37,11 @@ inquirer.prompt(questions).then((answers) => {
     inquirer.prompt(questionsTs).then((answersTs) => {
       if (answersTs.typescript === 'Yes') {
         shell.exec(`mkdir ${answers.projectName}`);
+        console.log('📁 Created a folder for the project');
         shell.exec(
-          `git clone https://github.com/avneesh0612/next-starter ${answers.projectName}`
+          `git clone ${links.get('NextJS-TS')} ${answers.projectName}`
         );
+        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
@@ -47,9 +49,9 @@ inquirer.prompt(questions).then((answers) => {
         );
       } else {
         shell.exec(`mkdir ${answers.projectName}`);
-        shell.exec(
-          `git clone https://github.com/Neeraj1005/Nextjs-tailwind-template ${answers.projectName}`
-        );
+        console.log('📁 Created a folder for the project');
+        shell.exec(`git clone ${links.get('NextJS')} ${answers.projectName}`);
+        console.log(`🖨️  Cloned started files into ${answers.projectName}`);
         shell.cd(`${path}/${answers.projectName}`);
         shell.exec(`npm i`);
         console.log(
@@ -59,9 +61,9 @@ inquirer.prompt(questions).then((answers) => {
     });
   } else if (answers.framework === 'Svelte') {
     shell.exec(`mkdir ${answers.projectName}`);
-    shell.exec(
-      `git clone https://github.com/jhanca-vm/Svelte-Tailwind ${answers.projectName}`
-    );
+    console.log('📁 Created a folder for the project');
+    shell.exec(`git clone ${links.get('Svelte')} ${answers.projectName}`);
+    console.log(`🖨️  Cloned started files into ${answers.projectName}`);
     shell.cd(`${path}/${answers.projectName}`);
     shell.exec(`npm i`);
     console.log(
@@ -69,9 +71,9 @@ inquirer.prompt(questions).then((answers) => {
     );
   } else {
     shell.exec(`mkdir ${answers.projectName}`);
-    shell.exec(
-      `git clone https://github.com/web2033/vite-vue3-tailwind-starter ${answers.projectName}`
-    );
+    console.log('📁 Created a folder for the project');
+    shell.exec(`git clone ${links.get('Vue')} ${answers.projectName}`);
+    console.log(`🖨️  Cloned started files into ${answers.projectName}`);
     shell.cd(`${path}/${answers.projectName}`);
     shell.exec(`npm i`);
     console.log(
