@@ -1,6 +1,11 @@
 // This question would be shown at the starting
 const questions = [
     {
+        type: 'text',
+        name: 'projectName',
+        message: 'Enter your project name:'
+    },
+    {
       type: 'list',
       name: 'framework',
       message: 'Choose the JS framework which you are using:',
