@@ -76,6 +76,41 @@ inquirer.prompt(questions).then((answers) => {
         );
       }
     });
+  }
+  else if (answers.framework === 'Angular') {
+    inquirer.prompt(questionsTs).then((answersTs) => {
+      if (answersTs.typescript === 'Yes') {
+        shell.exec(`mkdir ${answers.projectName}`);
+        console.log(chalk.green('📁 Created a folder for the project'));
+        shell.exec(
+          `git clone ${links.get('Angular')} ${answers.projectName}`
+        );
+        console.log(
+          chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+        );
+        shell.cd(`${path}/${answers.projectName}`);
+        shell.exec(`npm i`);
+        console.log(
+          chalk.green(
+            '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          )
+        );
+      } else {
+        shell.exec(`mkdir ${answers.projectName}`);
+        console.log(chalk.green('📁 Created a folder for the project'));
+        shell.exec(`git clone ${links.get('NextJS')} ${answers.projectName}`);
+        console.log(
+          chalk.green(`🖨️  Cloned started files into ${answers.projectName}`)
+        );
+        shell.cd(`${path}/${answers.projectName}`);
+        shell.exec(`npm i`);
+        console.log(
+          chalk.green(
+            '👨‍💻  Successfully installed all the required dependencies\nHappy hacking 🚀'
+          )
+        );
+      }
+    });
   } else if (answers.framework === 'Svelte') {
     shell.exec(`mkdir ${answers.projectName}`);
     console.log(chalk.green('📁 Created a folder for the project'));

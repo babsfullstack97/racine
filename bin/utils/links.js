@@ -8,6 +8,7 @@ let links = new Map([
     ['NextJS-TS', 'https://github.com/avneesh0612/next-starter'],
     ['Svelte', 'https://github.com/jhanca-vm/Svelte-Tailwind'],
     ['Vue', 'https://github.com/web2033/vite-vue3-tailwind-starter'],
+    ['Angular', 'https://github.com/ronpx/Angular-Tailwind.git']
   ]);
   
   module.exports = links;
